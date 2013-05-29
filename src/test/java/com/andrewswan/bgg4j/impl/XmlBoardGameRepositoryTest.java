@@ -5,6 +5,8 @@ import com.andrewswan.bgg4j.BoardGameRepository;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -51,5 +53,32 @@ public class XmlBoardGameRepositoryTest
 
         // Check
         assertEquals("Samurai", samurai.getPrimaryName());
+    }
+
+    @Test
+    public void searchingForNonExistentGameByNameShouldReturnEmptyList() {
+        // Invoke
+        final List<BoardGame> games = repository.search("Surely there's no game called this???");
+
+        // Check
+        assertNotNull(games);
+        assertEquals(0, games.size());
+    }
+
+    @Test
+    public void searchingForGameWithSpaceInNameShouldWork() {
+        // Set up
+        final String name = "Die Macher";
+
+        // Invoke
+        final List<BoardGame> matches = repository.search(name);
+
+        // Check
+        assertNotNull(matches);
+        assertEquals(1, matches.size());
+        final BoardGame boardGame = matches.get(0);
+        assertEquals(1, boardGame.getBggId());
+        assertEquals(name, boardGame.getPrimaryName());
+        assertEquals(1986, boardGame.getYearPublished());
     }
 }
