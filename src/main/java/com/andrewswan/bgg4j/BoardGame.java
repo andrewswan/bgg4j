@@ -68,4 +68,13 @@ public class BoardGame {
     public String toString() {
         return reflectionToString(this, SHORT_PREFIX_STYLE);
     }
+
+    /**
+     * Returns summary information about this game.
+     *
+     * @return a non-null summary
+     */
+    public BoardGameSummary getSummary() {
+        return new BoardGameSummary(bggId, yearPublished, getPrimaryName());
+    }
 }

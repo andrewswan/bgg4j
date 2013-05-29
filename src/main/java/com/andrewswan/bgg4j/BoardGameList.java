@@ -4,6 +4,7 @@ import org.apache.commons.lang3.Validate;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -45,5 +46,13 @@ public class BoardGameList {
             return null;
         }
         return boardGame;
+    }
+
+    public List<BoardGameSummary> getSummaries() {
+        final List<BoardGameSummary> summaries = new ArrayList<BoardGameSummary>();
+        for (final BoardGame boardGame : getBoardGames()) {
+            summaries.add(boardGame.getSummary());
+        }
+        return summaries;
     }
 }
