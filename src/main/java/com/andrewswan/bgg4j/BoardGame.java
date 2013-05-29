@@ -18,14 +18,20 @@ public class BoardGame {
     @XmlAttribute(name = "objectid")
     private int bggId;
 
+    @XmlElement(name = "maxplayers")
+    private int maxPlayers;
+
+    @XmlElement(name = "minplayers")
+    private int minPlayers;
+
     @XmlElement(name = "yearpublished")
     private int yearPublished;
 
-    @XmlElement(name = "image")
-    private String imageUrl;
-
     @XmlElement(name = "name")
     private List<String> names;
+
+    @XmlElement(name = "image")
+    private String imageUrl;
 
     @XmlElement(name = "thumbnail")
     private String thumbnailUrl;
@@ -36,6 +42,14 @@ public class BoardGame {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public int getMinPlayers() {
+        return minPlayers;
     }
 
     public String getPrimaryName() {

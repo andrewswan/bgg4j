@@ -40,6 +40,8 @@ public class XmlBoardGameRepositoryTest
         assertEquals(1986, dieMacher.getYearPublished());
         assertEquals("http://cf.geekdo-images.com/images/pic159509.jpg", dieMacher.getImageUrl());
         assertEquals("http://cf.geekdo-images.com/images/pic159509_t.jpg", dieMacher.getThumbnailUrl());
+        assertEquals(5, dieMacher.getMaxPlayers());
+        assertEquals(3, dieMacher.getMinPlayers());
     }
 
     @Test
