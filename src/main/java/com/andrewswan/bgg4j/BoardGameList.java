@@ -2,6 +2,7 @@ package com.andrewswan.bgg4j;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,7 +17,12 @@ public class BoardGameList {
     @XmlElement(name = "boardgame")
     private List<BoardGame> boardGames;
 
+    /**
+     * Returns the games in this list.
+     *
+     * @return a non-null list
+     */
     public List<BoardGame> getBoardGames() {
-        return boardGames;
+        return boardGames == null ? Collections.<BoardGame>emptyList() : boardGames;
     }
 }
