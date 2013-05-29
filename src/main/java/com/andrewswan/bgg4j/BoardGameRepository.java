@@ -9,8 +9,9 @@ import java.util.List;
  * @since 1.0
  */
 public interface BoardGameRepository {
+
     /**
-     * Returns the board game with the given BGG ID.
+     * Returns the details of the board game with the given BGG ID.
      *
      * @param bggId the BGG ID of the game to retrieve
      * @return null if there is no such board game
@@ -23,7 +24,7 @@ public interface BoardGameRepository {
      * @param name the name for which to search (required)
      * @return a non-null list of games (might be empty)
      */
-    List<BoardGame> search(String name);
+    List<BoardGameSummary> search(String name);
 
     /**
      * Searches for the game with the given exact name.
@@ -31,5 +32,5 @@ public interface BoardGameRepository {
      * @param name the name for which to search (required)
      * @return null if there is no such game
      */
-    BoardGame searchExact(String name);
+    BoardGameSummary searchExact(String name);
 }

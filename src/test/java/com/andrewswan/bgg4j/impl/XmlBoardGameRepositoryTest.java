@@ -2,6 +2,7 @@ package com.andrewswan.bgg4j.impl;
 
 import com.andrewswan.bgg4j.BoardGame;
 import com.andrewswan.bgg4j.BoardGameRepository;
+import com.andrewswan.bgg4j.BoardGameSummary;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -56,7 +57,7 @@ public class XmlBoardGameRepositoryTest
     @Test
     public void searchingForGamesWithBogusNameShouldReturnEmptyList() {
         // Invoke
-        final List<BoardGame> games = repository.search("Surely there's no game called this???");
+        final List<?> games = repository.search("Surely there's no game called this???");
 
         // Check
         assertNotNull(games);
@@ -69,12 +70,12 @@ public class XmlBoardGameRepositoryTest
         final String name = "Die Macher";
 
         // Invoke
-        final List<BoardGame> matches = repository.search(name);
+        final List<BoardGameSummary> matches = repository.search(name);
 
         // Check
         assertNotNull(matches);
         assertEquals(1, matches.size());
-        final BoardGame boardGame = matches.get(0);
+        final BoardGameSummary boardGame = matches.get(0);
         assertEquals(1, boardGame.getBggId());
         assertEquals(name, boardGame.getPrimaryName());
         assertEquals(1986, boardGame.getYearPublished());
@@ -83,7 +84,7 @@ public class XmlBoardGameRepositoryTest
     @Test
     public void searchingForGamesWithSubstringInCommonShouldReturnMultipleHits() {
         // Invoke
-        final List<BoardGame> games = repository.search("Steam");
+        final List<?> games = repository.search("Steam");
 
         // Check
         assertTrue("Actual hits = " + games.size(), games.size() > 1);
@@ -96,7 +97,7 @@ public class XmlBoardGameRepositoryTest
         assertTrue(repository.search(name).size() > 1);
 
         // Invoke
-        final BoardGame game = repository.searchExact(name);
+        final BoardGameSummary game = repository.searchExact(name);
 
         // Check
         assertNotNull(game);

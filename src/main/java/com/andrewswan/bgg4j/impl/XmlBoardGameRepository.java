@@ -3,6 +3,7 @@ package com.andrewswan.bgg4j.impl;
 import com.andrewswan.bgg4j.BoardGame;
 import com.andrewswan.bgg4j.BoardGameList;
 import com.andrewswan.bgg4j.BoardGameRepository;
+import com.andrewswan.bgg4j.BoardGameSummary;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -29,13 +30,13 @@ public class XmlBoardGameRepository implements BoardGameRepository {
     }
 
     @Override
-    public List<BoardGame> search(final String name) {
-        return getGames(getSearchUrl(name, false)).getBoardGames();
+    public List<BoardGameSummary> search(final String name) {
+        return getGames(getSearchUrl(name, false)).getSummaries();
     }
 
     @Override
-    public BoardGame searchExact(String name) {
-        return getGames(getSearchUrl(name, true)).getOnlyEntry();
+    public BoardGameSummary searchExact(String name) {
+        return getGames(getSearchUrl(name, true)).getOnlyEntry().getSummary();
     }
 
     private String getSearchUrl(final String query, final boolean exact) {
