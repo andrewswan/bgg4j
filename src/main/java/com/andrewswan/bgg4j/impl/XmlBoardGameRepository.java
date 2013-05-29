@@ -3,7 +3,6 @@ package com.andrewswan.bgg4j.impl;
 import com.andrewswan.bgg4j.BoardGame;
 import com.andrewswan.bgg4j.BoardGameList;
 import com.andrewswan.bgg4j.BoardGameRepository;
-import org.apache.commons.lang3.Validate;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -26,34 +25,37 @@ public class XmlBoardGameRepository implements BoardGameRepository {
 
     @Override
     public BoardGame get(final int bggId) {
-        final List<BoardGame> boardGames = getGames("boardgame/" + bggId);
-        if (boardGames.isEmpty()) {
-            return null;
-        }
-        Validate.validState(boardGames.size() == 1, "BGG returned more than one game with an ID of %d", bggId);
-        // Have one result, but is it what we asked for or an error placeholder? BGG does not return 404s.
-        final BoardGame boardGame = boardGames.get(0);
-        if (boardGame.getBggId() == 0) {
-            return null;
-        }
-        return boardGame;
+        return getGames("boardgame/" + bggId).getOnlyEntry();
     }
 
     @Override
     public List<BoardGame> search(final String name) {
+        return getGames(getSearchUrl(name, false)).getBoardGames();
+    }
+
+    @Override
+    public BoardGame searchExact(String name) {
+        return getGames(getSearchUrl(name, true)).getOnlyEntry();
+    }
+
+    private String getSearchUrl(final String query, final boolean exact) {
+        final StringBuilder url = new StringBuilder("/search?search=");
         try {
-            return getGames("/search?search=" + URLEncoder.encode(name, URL_ENCODING));
+            url.append(URLEncoder.encode(query, URL_ENCODING));
         }
         catch (final UnsupportedEncodingException e) {
             throw new IllegalStateException(e);
         }
+        if (exact) {
+            url.append("&exact=1");
+        }
+        return url.toString();
     }
 
-    private List<BoardGame> getGames(final String urlPath) {
+    private BoardGameList getGames(final String urlPath) {
         try {
             final URL bggUrl = new URL(BGG_XML_API_BASE + urlPath);
-            final BoardGameList gameList = (BoardGameList) GAME_LIST_UNMARSHALLER.unmarshal(bggUrl);
-            return gameList.getBoardGames();
+            return (BoardGameList) GAME_LIST_UNMARSHALLER.unmarshal(bggUrl);
         }
         catch (final JAXBException e) {
             throw new IllegalStateException(e);

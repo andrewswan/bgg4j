@@ -7,9 +7,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class XmlBoardGameRepositoryTest
 {
@@ -56,7 +54,7 @@ public class XmlBoardGameRepositoryTest
     }
 
     @Test
-    public void searchingForNonExistentGameByNameShouldReturnEmptyList() {
+    public void searchingForGamesWithBogusNameShouldReturnEmptyList() {
         // Invoke
         final List<BoardGame> games = repository.search("Surely there's no game called this???");
 
@@ -66,7 +64,7 @@ public class XmlBoardGameRepositoryTest
     }
 
     @Test
-    public void searchingForGameWithSpaceInNameShouldWork() {
+    public void searchingForGamesWithSpaceInNameShouldWork() {
         // Set up
         final String name = "Die Macher";
 
@@ -80,5 +78,28 @@ public class XmlBoardGameRepositoryTest
         assertEquals(1, boardGame.getBggId());
         assertEquals(name, boardGame.getPrimaryName());
         assertEquals(1986, boardGame.getYearPublished());
+    }
+
+    @Test
+    public void searchingForGamesWithSubstringInCommonShouldReturnMultipleHits() {
+        // Invoke
+        final List<BoardGame> games = repository.search("Steam");
+
+        // Check
+        assertTrue("Actual hits = " + games.size(), games.size() > 1);
+    }
+
+    @Test
+    public void searchingForExactNameThatIsPartOfOtherNamesShouldReturnOneHit() {
+        // Set up
+        final String name = "Steam";
+        assertTrue(repository.search(name).size() > 1);
+
+        // Invoke
+        final BoardGame game = repository.searchExact(name);
+
+        // Check
+        assertNotNull(game);
+        assertEquals(name, game.getPrimaryName());
     }
 }

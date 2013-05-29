@@ -18,10 +18,18 @@ public interface BoardGameRepository {
     BoardGame get(int bggId);
 
     /**
-     * Searches for board games with the given name.
+     * Searches for board games whose name contains the given string, case-insensitive.
      *
-     * @param name the name for which to search
+     * @param name the name for which to search (required)
      * @return a non-null list of games (might be empty)
      */
     List<BoardGame> search(String name);
+
+    /**
+     * Searches for the game with the given exact name.
+     *
+     * @param name the name for which to search (required)
+     * @return null if there is no such game
+     */
+    BoardGame searchExact(String name);
 }
