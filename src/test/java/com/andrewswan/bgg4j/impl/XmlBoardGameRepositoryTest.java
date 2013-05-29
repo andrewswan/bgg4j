@@ -36,9 +36,18 @@ public class XmlBoardGameRepositoryTest
         // Check
         assertNotNull(dieMacher);
         assertEquals(1, dieMacher.getBggId());
-        assertEquals("Die Macher", dieMacher.getName());
+        assertEquals("Die Macher", dieMacher.getPrimaryName());
         assertEquals(1986, dieMacher.getYearPublished());
         assertEquals("http://cf.geekdo-images.com/images/pic159509.jpg", dieMacher.getImageUrl());
         assertEquals("http://cf.geekdo-images.com/images/pic159509_t.jpg", dieMacher.getThumbnailUrl());
+    }
+
+    @Test
+    public void gameWithMultipleNamesShouldHaveCorrectPrimaryName() {
+        // Invoke
+        final BoardGame samurai = repository.get(3);
+
+        // Check
+        assertEquals("Samurai", samurai.getPrimaryName());
     }
 }
