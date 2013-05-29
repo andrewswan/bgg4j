@@ -15,7 +15,7 @@ import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
  */
 public class BoardGame {
 
-    @XmlAttribute(name = "objectid")
+    @XmlAttribute(name = "objectid", required = true)
     private int bggId;
 
     @XmlElement(name = "maxplayers")
