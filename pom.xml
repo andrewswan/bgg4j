@@ -7,16 +7,29 @@
     <groupId>com.andrewswan</groupId>
     <artifactId>bgg4j</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <name>bgg4j</name>
     <description>A Java library for easy use of the XML API exposed by www.boardgamegeek.com (BGG).</description>
 
     <scm>
-        <url>https://AndrewSwan_au@bitbucket.org/AndrewSwan_au/bgg4j.git</url>
+        <url>https://bitbucket.org/AndrewSwan_au/bgg4j/src</url>
+        <connection>scm:git:https://AndrewSwan_au@bitbucket.org/AndrewSwan_au/bgg4j.git</connection>
     </scm>
+
+    <url>https://bitbucket.org/AndrewSwan_au/bgg4j</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <developers>
         <developer>
+            <id>AndrewSwan_au</id>
             <name>Andrew Swan</name>
             <url>http://www.andrewswan.com</url>
         </developer>
@@ -88,6 +101,19 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.6</version>
             </plugin>
@@ -95,6 +121,19 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
