@@ -1,12 +1,7 @@
 package com.andrewswan.bgg4j;
 
-import org.apache.commons.lang3.Validate;
-
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-
-import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
-import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
 /**
  * A board game's summary details on BGG.
@@ -41,7 +36,9 @@ public class BoardGameSummary {
      */
     public BoardGameSummary(
             final int bggId, final int yearPublished, final String primaryName) {
-        Validate.notBlank(primaryName);
+        if (primaryName == null || "".equals(primaryName.trim())) {
+            throw new IllegalArgumentException("Invalid name '" + primaryName + "'");
+        }
         this.bggId = bggId;
         this.primaryName = primaryName;
         this.yearPublished = yearPublished;
@@ -57,10 +54,5 @@ public class BoardGameSummary {
 
     public int getYearPublished() {
         return yearPublished;
-    }
-
-    @Override
-    public String toString() {
-        return reflectionToString(this, SHORT_PREFIX_STYLE);
     }
 }

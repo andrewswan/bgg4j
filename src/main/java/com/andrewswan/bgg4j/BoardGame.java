@@ -2,11 +2,7 @@ package com.andrewswan.bgg4j;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-
 import java.util.List;
-
-import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
-import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
 /**
  * A board game on BGG.
@@ -62,11 +58,6 @@ public class BoardGame {
 
     public String getThumbnailUrl() {
         return thumbnailUrl;
-    }
-
-    @Override
-    public String toString() {
-        return reflectionToString(this, SHORT_PREFIX_STYLE);
     }
 
     /**

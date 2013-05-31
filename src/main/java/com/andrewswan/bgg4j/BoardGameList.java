@@ -1,7 +1,5 @@
 package com.andrewswan.bgg4j;
 
-import org.apache.commons.lang3.Validate;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
@@ -39,7 +37,9 @@ public class BoardGameList {
         if (boardGames.isEmpty()) {
             return null;
         }
-        Validate.validState(boardGames.size() == 1, "Expected at most one game but found " + boardGames.size());
+        if (boardGames.size() > 1) {
+            throw new IllegalStateException("Expected at most one game but found " + boardGames.size());
+        }
         // Have one result, but is it what we asked for, or an error placeholder? BGG does not return 404s.
         final BoardGame boardGame = boardGames.get(0);
         if (boardGame.getBggId() == 0) {
