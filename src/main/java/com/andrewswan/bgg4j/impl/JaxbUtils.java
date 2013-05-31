@@ -1,7 +1,5 @@
 package com.andrewswan.bgg4j.impl;
 
-import com.andrewswan.bgg4j.BoardGameList;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
