@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static com.andrewswan.bgg4j.TestUtils.assertDieMacher;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -38,14 +39,7 @@ public class XmlBoardGameRepositoryTest
         final BoardGame dieMacher = repository.get(gameId);
 
         // Check
-        assertNotNull(dieMacher);
-        assertEquals(1, dieMacher.getBggId());
-        assertEquals("Die Macher", dieMacher.getPrimaryName());
-        assertEquals(1986, dieMacher.getYearPublished());
-        assertEquals("http://cf.geekdo-images.com/images/pic159509.jpg", dieMacher.getImageUrl());
-        assertEquals("http://cf.geekdo-images.com/images/pic159509_t.jpg", dieMacher.getThumbnailUrl());
-        assertEquals(5, dieMacher.getMaxPlayers());
-        assertEquals(3, dieMacher.getMinPlayers());
+        assertDieMacher(dieMacher);
     }
 
     @Test
