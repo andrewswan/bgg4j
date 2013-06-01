@@ -19,7 +19,7 @@ public interface BoardGameRepository {
     BoardGame get(int bggId);
 
     /**
-     * Searches for board games whose name contains the given string, case-insensitive.
+     * Searches for board games whose names contain the given string, case-insensitive.
      *
      * @param name the name for which to search (required)
      * @return a non-null list of games (might be empty)
