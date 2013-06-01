@@ -26,6 +26,9 @@ public class BoardGame {
     @XmlElement(name = "name")
     private List<String> names;
 
+    @XmlElement(name = "boardgamedesigner")
+    private String designer;
+
     @XmlElement(name = "image")
     private String imageUrl;
 
@@ -34,6 +37,10 @@ public class BoardGame {
 
     public int getBggId() {
         return bggId;
+    }
+
+    public String getDesigner() {
+        return designer;
     }
 
     public String getImageUrl() {
