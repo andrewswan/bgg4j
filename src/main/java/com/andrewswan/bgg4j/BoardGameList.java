@@ -1,5 +1,8 @@
 package com.andrewswan.bgg4j;
 
+import com.andrewswan.bgg4j.impl.JaxbUtils;
+
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
@@ -14,6 +17,11 @@ import java.util.List;
  */
 @XmlRootElement(name = "boardgames")
 public class BoardGameList {
+
+    /**
+     * A JAXB XML unmarshaller for this class.
+     */
+    public static final Unmarshaller UNMARSHALLER = JaxbUtils.getUnmarshaller(BoardGameList.class);
 
     @XmlElement(name = "boardgame")
     private List<BoardGame> boardGames;

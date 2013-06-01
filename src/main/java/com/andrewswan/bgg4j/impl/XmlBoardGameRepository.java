@@ -22,7 +22,6 @@ public class XmlBoardGameRepository implements BoardGameRepository {
 
     private static final String BGG_XML_API_BASE = "http://www.boardgamegeek.com/xmlapi/";
     private static final String URL_ENCODING = "UTF-8";
-    private static final Unmarshaller GAME_LIST_UNMARSHALLER = JaxbUtils.getUnmarshaller(BoardGameList.class);
 
     @Override
     public BoardGame get(final int bggId) {
@@ -56,7 +55,7 @@ public class XmlBoardGameRepository implements BoardGameRepository {
     private BoardGameList getGames(final String urlPath) {
         try {
             final URL bggUrl = new URL(BGG_XML_API_BASE + urlPath);
-            return (BoardGameList) GAME_LIST_UNMARSHALLER.unmarshal(bggUrl);
+            return (BoardGameList) BoardGameList.UNMARSHALLER.unmarshal(bggUrl);
         }
         catch (final JAXBException e) {
             throw new IllegalStateException(e);
