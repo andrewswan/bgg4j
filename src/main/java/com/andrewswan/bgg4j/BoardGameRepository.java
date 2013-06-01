@@ -27,7 +27,7 @@ public interface BoardGameRepository {
     List<BoardGameSummary> search(String name);
 
     /**
-     * Searches for the game with the given exact name.
+     * Searches for the game with the given exact name, case-insensitive.
      *
      * @param name the name for which to search (required)
      * @return null if there is no such game
