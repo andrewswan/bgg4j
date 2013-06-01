@@ -32,7 +32,19 @@ public class BoardGameList {
      * @return a non-null list
      */
     public List<BoardGame> getBoardGames() {
-        return boardGames == null ? Collections.<BoardGame>emptyList() : boardGames;
+        return getFirstEntry() == null ? Collections.<BoardGame>emptyList() : boardGames;
+    }
+
+    private BoardGame getFirstEntry() {
+        if (boardGames == null || boardGames.isEmpty()) {
+            return null;
+        }
+        // Have one or more results, but is it the first an error placeholder? BGG does not return 404s.
+        final BoardGame boardGame = boardGames.get(0);
+        if (boardGame.getBggId() == 0) {
+            return null;
+        }
+        return boardGame;
     }
 
     /**
@@ -42,18 +54,14 @@ public class BoardGameList {
      * @throws IllegalStateException if there are more than one
      */
     public BoardGame getOnlyEntry() {
-        if (boardGames.isEmpty()) {
+        final BoardGame firstGame = getFirstEntry();
+        if (firstGame == null) {
             return null;
         }
         if (boardGames.size() > 1) {
             throw new IllegalStateException("Expected at most one game but found " + boardGames.size());
         }
-        // Have one result, but is it what we asked for, or an error placeholder? BGG does not return 404s.
-        final BoardGame boardGame = boardGames.get(0);
-        if (boardGame.getBggId() == 0) {
-            return null;
-        }
-        return boardGame;
+        return firstGame;
     }
 
     public List<BoardGameSummary> getSummaries() {
