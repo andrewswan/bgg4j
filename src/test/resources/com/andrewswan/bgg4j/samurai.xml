@@ -1,0 +1,118 @@
+<boardgames termsofuse="http://boardgamegeek.com/xmlapi/termsofuse">
+    <boardgame objectid="3">
+        <yearpublished>1998</yearpublished>
+        <minplayers>2</minplayers>
+        <maxplayers>4</maxplayers>
+        <playingtime>45</playingtime>
+        <age>10</age>
+        <name primary="true" sortindex="1">Samurai</name>
+        <name sortindex="1">Samuraj</name>
+        <name sortindex="1">Самурай</name>
+        <name sortindex="1">侍</name>
+        <description>
+            Part of the Knizia tile-laying trilogy, this game is ostensibly set in medieval Japan. Players use hexagonal tiles to surround cities, which have one to three different figures: rice paddies, Buddhas, or high hats. The tiles represent influence on particular facets of the cities, and the highest influence on a figure when the city is surrounded takes that figure. The object of the game is to have more of any one else in one category, and then have the most remaining figures.<br/><br/>
+        </description>
+        <thumbnail>
+            http://cf.geekdo-images.com/images/pic1352240_t.jpg
+        </thumbnail>
+        <image>http://cf.geekdo-images.com/images/pic1352240.jpg</image>
+        <boardgamehonor objectid="13414">1998 Meeples' Choice Award</boardgamehonor>
+        <boardgamehonor objectid="18927">2008 JoTa Best Game Released in Brazil Nominee</boardgamehonor>
+        <boardgamehonor objectid="18779">
+            2011 JoTa Best Game Released in Brazil Audience Award
+        </boardgamehonor>
+        <boardgamehonor objectid="18777">2011 JoTa Best Game Released in Brazil Nominee</boardgamehonor>
+        <boardgamepublisher objectid="267">999 Games</boardgamepublisher>
+        <boardgameversion objectid="129449">999 Games Dutch version</boardgameversion>
+        <boardgamepublisher objectid="29">ABACUSSPIELE</boardgamepublisher>
+        <boardgamemechanic objectid="2080">Area Control / Area Influence</boardgamemechanic>
+        <boardgamefamily objectid="9470">Asian Theme</boardgamefamily>
+        <boardgamepublisher objectid="7340">Astrel Games</boardgamepublisher>
+        <boardgameversion objectid="39008">Brazilian First Edition</boardgameversion>
+        <boardgameversion objectid="53176">Brazilian Second Edition</boardgameversion>
+        <boardgamepublisher objectid="7335">Ceilikan Jogos</boardgamepublisher>
+        <boardgameversion objectid="185136">Chinese first edition</boardgameversion>
+        <boardgamefamily objectid="10634">Country: Japan</boardgamefamily>
+        <boardgamepublisher objectid="41">Descartes Editeur</boardgamepublisher>
+        <boardgameversion objectid="74707">English First Edition</boardgameversion>
+        <boardgameversion objectid="73663">French edition</boardgameversion>
+        <boardgamepodcastepisode objectid="6119">
+            Garrett's Games 203 - Richelieu, Samurai, and Der Palast von Eschnapur
+        </boardgamepodcastepisode>
+        <boardgameversion objectid="24198">German edition</boardgameversion>
+        <boardgameversion objectid="205908">German first edition</boardgameversion>
+        <boardgamemechanic objectid="2040">Hand Management</boardgamemechanic>
+        <boardgamepublisher objectid="133">Hans im Glück Verlags-GmbH</boardgamepublisher>
+        <boardgamepublisher objectid="1391">Hobby Japan</boardgamepublisher>
+        <boardgameversion objectid="183751">Japanese Edition</boardgameversion>
+        <boardgamedesigner objectid="2">Reiner Knizia</boardgamedesigner>
+        <boardgamefamily objectid="42">Knizia tile-laying trilogy</boardgamefamily>
+        <boardgamepublisher objectid="5812">Lacerta</boardgamepublisher>
+        <boardgamepublisher objectid="3218">Lautapelit.fi</boardgamepublisher>
+        <boardgamecategory objectid="1035">Medieval</boardgamecategory>
+        <boardgameversion objectid="27566">Nordic first edition</boardgameversion>
+        <boardgameversion objectid="31147">Polish edition</boardgameversion>
+        <videogamebg objectid="80750">Reiner Knizia's Samurai</videogamebg>
+        <boardgameversion objectid="25339">Rio Grande English Edition</boardgameversion>
+        <boardgamepublisher objectid="3">Rio Grande Games</boardgamepublisher>
+        <boardgamepodcastepisode objectid="62259">RSOG Podcast Episode 6: Essen Preview</boardgamepodcastepisode>
+        <boardgamemechanic objectid="2004">Set Collection</boardgamemechanic>
+        <boardgamepublisher objectid="3954">Skandinavisk Spil Kompagni</boardgamepublisher>
+        <boardgamesubdomain objectid="5497">Strategy Games</boardgamesubdomain>
+        <boardgamemechanic objectid="2002">Tile Placement</boardgamemechanic>
+        <boardgameartist objectid="11883">Franz Vohwinkel</boardgameartist>
+        <boardgamepublisher objectid="8759">Wargames Club Publishing</boardgamepublisher>
+        <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="208">
+            <results numplayers="1">
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="0"/>
+                <result value="Not Recommended" numvotes="91"/>
+            </results>
+            <results numplayers="2">
+                <result value="Best" numvotes="75"/>
+                <result value="Recommended" numvotes="96"/>
+                <result value="Not Recommended" numvotes="9"/>
+            </results>
+            <results numplayers="3">
+                <result value="Best" numvotes="117"/>
+                <result value="Recommended" numvotes="64"/>
+                <result value="Not Recommended" numvotes="2"/>
+            </results>
+            <results numplayers="4">
+                <result value="Best" numvotes="50"/>
+                <result value="Recommended" numvotes="99"/>
+                <result value="Not Recommended" numvotes="19"/>
+            </results>
+            <results numplayers="4+">
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="1"/>
+                <result value="Not Recommended" numvotes="76"/>
+            </results>
+        </poll>
+        <poll name="language_dependence" title="Language Dependence" totalvotes="55">
+            <results>
+                <result level="1" value="No necessary in-game text" numvotes="55"/>
+                <result level="2" value="Some necessary text - easily memorized or small crib sheet" numvotes="0"/>
+                <result level="3" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="0"/>
+                <result level="4" value="Extensive use of text - massive conversion needed to be playable" numvotes="0"/>
+                <result level="5" value="Unplayable in another language" numvotes="0"/>
+            </results>
+        </poll>
+        <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="30">
+            <results>
+                <result value="2" numvotes="0"/>
+                <result value="3" numvotes="0"/>
+                <result value="4" numvotes="0"/>
+                <result value="5" numvotes="0"/>
+                <result value="6" numvotes="4"/>
+                <result value="8" numvotes="8"/>
+                <result value="10" numvotes="16"/>
+                <result value="12" numvotes="2"/>
+                <result value="14" numvotes="0"/>
+                <result value="16" numvotes="0"/>
+                <result value="18" numvotes="0"/>
+                <result value="21 and up" numvotes="0"/>
+            </results>
+        </poll>
+    </boardgame>
+</boardgames>

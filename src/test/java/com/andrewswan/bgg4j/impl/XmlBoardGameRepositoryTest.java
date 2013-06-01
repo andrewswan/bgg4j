@@ -4,6 +4,7 @@ import com.andrewswan.bgg4j.BoardGame;
 import com.andrewswan.bgg4j.BoardGameRepository;
 import com.andrewswan.bgg4j.BoardGameSummary;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -14,23 +15,24 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-public class XmlBoardGameRepositoryTest
-{
+public class XmlBoardGameRepositoryTest {
+
     // Fixture
     private BoardGameRepository repository;
 
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() {
         repository = new XmlBoardGameRepository();
     }
 
     @Test
+    @Ignore("Requires BGG to be up and reachable")
     public void nonExistentGameShouldBeNull() {
         assertNull(repository.get(Integer.MAX_VALUE));
     }
 
     @Test
+    @Ignore("Requires BGG to be up and reachable")
     public void existingGameShouldContainRequiredValues() {
         // Set up
         final int gameId = 1;
@@ -43,6 +45,7 @@ public class XmlBoardGameRepositoryTest
     }
 
     @Test
+    @Ignore("Requires BGG to be up and reachable")
     public void gameWithMultipleNamesShouldHaveCorrectPrimaryName() {
         // Invoke
         final BoardGame samurai = repository.get(3);
@@ -52,6 +55,7 @@ public class XmlBoardGameRepositoryTest
     }
 
     @Test
+    @Ignore("Requires BGG to be up and reachable")
     public void searchingForGamesWithBogusNameShouldReturnEmptyList() {
         // Invoke
         final List<?> games = repository.search("Surely there's no game called this???");
