@@ -83,7 +83,6 @@
                         <configuration>
                             <rules>
                                 <DependencyConvergence />
-                                <requireNoRepositories />
                                 <requirePluginVersions />
                             </rules>
                         </configuration>
