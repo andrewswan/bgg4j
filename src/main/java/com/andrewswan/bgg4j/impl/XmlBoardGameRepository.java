@@ -16,6 +16,8 @@ import java.util.List;
 /**
  * A BoardGameRepository that uses the BGG XML API behind the scenes.
  *
+ * This class is thread-safe and can be a singleton in your application.
+ *
  * @since 1.0
  */
 public class XmlBoardGameRepository implements BoardGameRepository {
