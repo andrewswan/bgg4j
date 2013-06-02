@@ -118,6 +118,8 @@
     </build>
 
     <properties>
+        <!-- The ID of my public PGP key -->
+        <gpg.keyname>2C841668</gpg.keyname>
         <java.version>1.6</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
