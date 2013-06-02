@@ -18,9 +18,9 @@
     <description>A Java library for easy use of the XML API exposed by www.boardgamegeek.com (BGG).</description>
 
     <scm>
-        <url>git@bitbucket.org:AndrewSwan_au/bgg4j.git</url>
-        <connection>scm:git:git@bitbucket.org:AndrewSwan_au/bgg4j.git</connection>
-        <developerConnection>scm:git:git@bitbucket.org:AndrewSwan_au/bgg4j.git</developerConnection>
+        <url>https://bitbucket.org/AndrewSwan_au/bgg4j</url>
+        <connection>scm:git:ssh://git@bitbucket.org/AndrewSwan_au/bgg4j.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org/AndrewSwan_au/bgg4j.git</developerConnection>
     </scm>
 
     <url>https://bitbucket.org/AndrewSwan_au/bgg4j</url>
