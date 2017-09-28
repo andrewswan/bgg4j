@@ -4,106 +4,128 @@
         <minplayers>3</minplayers>
         <maxplayers>5</maxplayers>
         <playingtime>240</playingtime>
+        <minplaytime>240</minplaytime>
+        <maxplaytime>240</maxplaytime>
         <age>14</age>
-
         <name primary="true" sortindex="5">Die Macher</name>
-
-        <description>Die Macher is a game about seven sequential political races in different regions of Germany. Players are in charge of national political parties, and must manage limited resources to help their party to victory. The winning party will have the most victory points after all the regional elections. There are four different ways of scoring victory points. First, each regional election can supply one to eighty victory points, depending on the size of the region and how well your party does in it. Second, if a party wins a regional election and has some media influence in the region, then the party will receive some media-control victory points. Third, each party has a national party membership which will grow as the game progresses and this will supply a fair number of victory points. Lastly, parties score some victory points if their party platform matches the national opinions at the end of the game.&lt;br/&gt;&lt;br/&gt;The 1986 edition featured 4 parties from the old West Germany and supported 3-4 players. The 1997 edition supports up to 5 players in the re-united Germany and updated several features of the rules as well.  The 2006 edition also supports up to 5 players and adds a shorter 5 round variant and additional rules updates by the original designer.&lt;br/&gt;&lt;br/&gt;Die Macher is #1 in the Valley Games Classic Line&lt;br/&gt;&lt;br/&gt;</description>
-
-        <thumbnail>http://cf.geekdo-images.com/images/pic159509_t.jpg</thumbnail>
-        <image>http://cf.geekdo-images.com/images/pic159509.jpg</image>
-
+        <description>
+            Die Macher is a game about seven sequential political races in different regions of Germany. Players are in charge of national political parties, and must manage limited resources to help their party to victory. The winning party will have the most victory points after all the regional elections. There are four different ways of scoring victory points. First, each regional election can supply one to eighty victory points, depending on the size of the region and how well your party does in it. Second, if a party wins a regional election and has some media influence in the region, then the party will receive some media-control victory points. Third, each party has a national party membership which will grow as the game progresses and this will supply a fair number of victory points. Lastly, parties score some victory points if their party platform matches the national opinions at the end of the game.<br/><br/>The 1986 edition featured 4 parties from the old West Germany and supported 3-4 players. The 1997 edition supports up to 5 players in the re-united Germany and updated several features of the rules as well. The 2006 edition also supports up to 5 players and adds a shorter 5 round variant and additional rules updates by the original designer.<br/><br/>Die Macher is #1 in the Valley Games Classic Line<br/><br/>
+        </description>
+        <thumbnail>
+            https://cf.geekdo-images.com/images/pic159509_t.jpg
+        </thumbnail>
+        <image>https://cf.geekdo-images.com/images/pic159509.jpg</image>
         <boardgamehonor objectid="19702">1998 Essener Feder Best Written Rules Winner</boardgamehonor>
         <boardgamehonor objectid="8673">1998 Spiel des Jahres Recommended</boardgamehonor>
         <boardgamehonor objectid="18935">2008 JoTa Best Monster Board Game Nominee</boardgamehonor>
         <boardgamehonor objectid="18936">2008 JoTa Best Monster Board Game Winner</boardgamehonor>
+        <boardgamemechanic objectid="2080">Area Control / Area Influence</boardgamemechanic>
         <boardgamemechanic objectid="2012">Auction/Bidding</boardgamemechanic>
-        <boardgamepodcastepisode objectid="86194">BGTG 112 - Five-Player Games (with Dave O&#039;Connor)</boardgamepodcastepisode>
-        <boardgamepodcastepisode objectid="101144">BGTG 136 - 100 Great Games, part 3 (with Stephen Glenn and Mark Jackson)</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="177525">BGA Episode 100 - Top 100 Games of All Time</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="86194">BGTG 112 - Five-Player Games (with Dave O'Connor)</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="101144">
+            BGTG 136 - 100 Great Games, part 3 (with Stephen Glenn and Mark Jackson)
+        </boardgamepodcastepisode>
         <boardgamepodcastepisode objectid="3361">BGWS 024 – Die Macher</boardgamepodcastepisode>
         <boardgamefamily objectid="10643">Country: Germany</boardgamefamily>
+        <boardgamemechanic objectid="2072">Dice Rolling</boardgamemechanic>
         <boardgamecategory objectid="1021">Economic</boardgamecategory>
         <boardgameversion objectid="24534">English third edition</boardgameversion>
-        <boardgamepodcastepisode objectid="10931">Epidode 9 - Wishlist Games</boardgamepodcastepisode>
-        <boardgamepodcastepisode objectid="61407">Episodio 3 – Homínidos 2011 y entrevista a Pol Cors</boardgamepodcastepisode>
-        <boardgamepodcastepisode objectid="6096">Garrett&#039;s Games 226 - Friday Meeplefest Roundtable Part 2</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="175510">Episode 31 - Top 50, Picks 40-31</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="104630">
+            Episodio 11 – Especial verano 2013: Juegos no jugados
+        </boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="61407">
+            Episodio 3 – Homínidos 2011 y entrevista a Pol Cors
+        </boardgamepodcastepisode>
         <boardgameversion objectid="25164">German first edition</boardgameversion>
         <boardgameversion objectid="24939">German second edition</boardgameversion>
         <boardgameartist objectid="12517">Marcus Gschwendtner</boardgameartist>
+        <boardgamemechanic objectid="2040">Hand Management</boardgamemechanic>
         <boardgamepublisher objectid="133">Hans im Glück Verlags-GmbH</boardgamepublisher>
+        <boardgamepodcastepisode objectid="123206">Heavy Cardboard Episode 3 – Die Macher</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="170757">
+            Heavy Cardboard Episode 39 – Top 50 Favorite Games of Right Now
+        </boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="187729">
+            Heavy Cardboard Episode 52 &ndash; Amanda&rsquo;s Top 50 &amp; Edward&rsquo;s Top 50
+        </boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="194403">
+            Heavy Cardboard Episode 59 – December (2016) Briefing
+        </boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="204382">HLG 20: Dilemma's &amp; Path</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="177491">HLG 3: Explosief Materiaal</boardgamepodcastepisode>
         <boardgamepodcastepisode objectid="76638">House Rules 30: Die Macher, Die!</boardgamepodcastepisode>
-        <boardgamepublisher objectid="2">Moskito</boardgamepublisher>
+        <boardgamepodcastepisode objectid="115513">Ludology Episode 76 - I Like Dice To Roll</boardgamepodcastepisode>
+        <boardgamepublisher objectid="2">Moskito Spiele</boardgamepublisher>
+        <boardgamecategory objectid="1026">Negotiation</boardgamecategory>
+        <boardgamepodcastepisode objectid="101519">Podcast #061 - Spiel des Jahres 2013</boardgamepodcastepisode>
         <boardgamecategory objectid="1001">Political</boardgamecategory>
         <boardgamedesigner objectid="1">Karl-Heinz Schmiel</boardgamedesigner>
+        <boardgamemechanic objectid="2020">Simultaneous Action Selection</boardgamemechanic>
         <boardgamesubdomain objectid="5497">Strategy Games</boardgamesubdomain>
+        <boardgamepodcastepisode objectid="152647">
+            The Good, The Board, and the Ugly Behaviors: Episode 20 “Dealing with Bad Players”
+        </boardgamepodcastepisode>
         <boardgamepodcastepisode objectid="7430">The Messy Game Room Episode 3</boardgamepodcastepisode>
+        <boardgamepodcastepisode objectid="5619">The Spiel #28 - Listener's Choice</boardgamepodcastepisode>
         <boardgamefamily objectid="91">Valley Games Classic Line</boardgamefamily>
         <boardgamepublisher objectid="5382">Valley Games, Inc.</boardgamepublisher>
-
-        <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="107">
-
+        <poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="123">
             <results numplayers="1">
-                <result value="Best" numvotes="0" />
-                <result value="Recommended" numvotes="1" />
-                <result value="Not Recommended" numvotes="67" />
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="1"/>
+                <result value="Not Recommended" numvotes="76"/>
             </results>
-
             <results numplayers="2">
-                <result value="Best" numvotes="0" />
-                <result value="Recommended" numvotes="1" />
-                <result value="Not Recommended" numvotes="67" />
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="1"/>
+                <result value="Not Recommended" numvotes="77"/>
             </results>
-
             <results numplayers="3">
-                <result value="Best" numvotes="0" />
-                <result value="Recommended" numvotes="21" />
-                <result value="Not Recommended" numvotes="59" />
+                <result value="Best" numvotes="0"/>
+                <result value="Recommended" numvotes="25"/>
+                <result value="Not Recommended" numvotes="69"/>
             </results>
-
             <results numplayers="4">
-                <result value="Best" numvotes="18" />
-                <result value="Recommended" numvotes="70" />
-                <result value="Not Recommended" numvotes="10" />
+                <result value="Best" numvotes="23"/>
+                <result value="Recommended" numvotes="80"/>
+                <result value="Not Recommended" numvotes="9"/>
             </results>
-
             <results numplayers="5">
-                <result value="Best" numvotes="95" />
-                <result value="Recommended" numvotes="9" />
-                <result value="Not Recommended" numvotes="0" />
+                <result value="Best" numvotes="105"/>
+                <result value="Recommended" numvotes="12"/>
+                <result value="Not Recommended" numvotes="2"/>
             </results>
-
             <results numplayers="5+">
-                <result value="Best" numvotes="0" />
-                <result value="Recommended" numvotes="0" />
-                <result value="Not Recommended" numvotes="47" />
+                <result value="Best" numvotes="1"/>
+                <result value="Recommended" numvotes="0"/>
+                <result value="Not Recommended" numvotes="54"/>
             </results>
         </poll>
-
-        <poll name="language_dependence" title="Language Dependence" totalvotes="42">
-
+        <poll name="language_dependence" title="Language Dependence" totalvotes="47">
             <results>
-                <result level="1" value="No necessary in-game text" numvotes="32" />
-                <result level="2" value="Some necessary text - easily memorized or small crib sheet" numvotes="4" />
-                <result level="3" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="6" />
-                <result level="4" value="Extensive use of text - massive conversion needed to be playable" numvotes="0" />
-                <result level="5" value="Unplayable in another language" numvotes="0" />
+                <result level="1" value="No necessary in-game text" numvotes="36"/>
+                <result level="2" value="Some necessary text - easily memorized or small crib sheet" numvotes="5"/>
+                <result level="3" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="6"/>
+                <result level="4" value="Extensive use of text - massive conversion needed to be playable" numvotes="0"/>
+                <result level="5" value="Unplayable in another language" numvotes="0"/>
             </results>
         </poll>
-
-        <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="24">
+        <poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="27">
             <results>
-                <result value="2" numvotes="0" />
-                <result value="3" numvotes="0" />
-                <result value="4" numvotes="0" />
-                <result value="5" numvotes="0" />
-                <result value="6" numvotes="0" />
-                <result value="8" numvotes="0" />
-                <result value="10" numvotes="0" />
-                <result value="12" numvotes="5" />
-                <result value="14" numvotes="12" />
-                <result value="16" numvotes="4" />
-                <result value="18" numvotes="2" />
-                <result value="21 and up" numvotes="1" />
+                <result value="2" numvotes="0"/>
+                <result value="3" numvotes="0"/>
+                <result value="4" numvotes="0"/>
+                <result value="5" numvotes="0"/>
+                <result value="6" numvotes="0"/>
+                <result value="8" numvotes="0"/>
+                <result value="10" numvotes="0"/>
+                <result value="12" numvotes="5"/>
+                <result value="14" numvotes="15"/>
+                <result value="16" numvotes="4"/>
+                <result value="18" numvotes="2"/>
+                <result value="21 and up" numvotes="1"/>
             </results>
         </poll>
     </boardgame>
