@@ -10,6 +10,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+/**
+ * Integration test of the unmarshalling of various sample BGG XML responses into {@link BoardGameList}s.
+ */
 public class BoardGameListTest {
 
     @Test
