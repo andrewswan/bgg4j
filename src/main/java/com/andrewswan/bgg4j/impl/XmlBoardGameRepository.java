@@ -6,12 +6,12 @@ import com.andrewswan.bgg4j.BoardGameRepository;
 import com.andrewswan.bgg4j.BoardGameSummary;
 
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A BoardGameRepository that uses the BGG XML API behind the scenes.
@@ -26,7 +26,7 @@ public class XmlBoardGameRepository implements BoardGameRepository {
     private static final String URL_ENCODING = "UTF-8";
 
     @Override
-    public BoardGame get(final int bggId) {
+    public Optional<BoardGame> get(final int bggId) {
         return getGames("boardgame/" + bggId).getOnlyEntry();
     }
 
@@ -36,8 +36,8 @@ public class XmlBoardGameRepository implements BoardGameRepository {
     }
 
     @Override
-    public BoardGameSummary searchExact(String name) {
-        return getGames(getSearchUrl(name, true)).getOnlyEntry().getSummary();
+    public Optional<BoardGameSummary> searchExact(String name) {
+        return getGames(getSearchUrl(name, true)).getOnlyEntry().map(BoardGame::getSummary);
     }
 
     private String getSearchUrl(final String query, final boolean exact) {
@@ -59,10 +59,7 @@ public class XmlBoardGameRepository implements BoardGameRepository {
             final URL bggUrl = new URL(BGG_XML_API_BASE + urlPath);
             return (BoardGameList) BoardGameList.UNMARSHALLER.unmarshal(bggUrl);
         }
-        catch (final JAXBException e) {
-            throw new IllegalStateException(e);
-        }
-        catch (final MalformedURLException e) {
+        catch (final JAXBException | MalformedURLException e) {
             throw new IllegalStateException(e);
         }
     }

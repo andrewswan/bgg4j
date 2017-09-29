@@ -38,7 +38,7 @@ public class XmlBoardGameRepositoryTest {
         final int gameId = 1;
 
         // Invoke
-        final BoardGame dieMacher = repository.get(gameId);
+        final BoardGame dieMacher = repository.get(gameId).orElseThrow(IllegalStateException::new);
 
         // Check
         assertDieMacher(dieMacher);
@@ -48,7 +48,7 @@ public class XmlBoardGameRepositoryTest {
     @Ignore("Requires BGG to be up and reachable")
     public void gameWithMultipleNamesShouldHaveCorrectPrimaryName() {
         // Invoke
-        final BoardGame samurai = repository.get(3);
+        final BoardGame samurai = repository.get(3).orElseThrow(IllegalStateException::new);
 
         // Check
         assertEquals("Samurai", samurai.getPrimaryName());
@@ -98,10 +98,10 @@ public class XmlBoardGameRepositoryTest {
         assertTrue(repository.search(name).size() > 1);
 
         // Invoke
-        final BoardGameSummary game = repository.searchExact(name);
+        final BoardGameSummary summary = repository.searchExact(name).orElseThrow(IllegalStateException::new);
 
         // Check
-        assertNotNull(game);
-        assertEquals(name, game.getPrimaryName());
+        assertNotNull(summary);
+        assertEquals(name, summary.getPrimaryName());
     }
 }
