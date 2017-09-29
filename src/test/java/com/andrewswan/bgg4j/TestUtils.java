@@ -18,8 +18,8 @@ public final class TestUtils {
         assertEquals(1, game.getBggId());
         assertEquals("Die Macher", game.getPrimaryName());
         assertEquals(1986, game.getYearPublished());
-        assertEquals("http://cf.geekdo-images.com/images/pic159509.jpg", game.getImageUrl());
-        assertEquals("http://cf.geekdo-images.com/images/pic159509_t.jpg", game.getThumbnailUrl());
+        assertEquals("https://cf.geekdo-images.com/images/pic159509.jpg", game.getImageUrl());
+        assertEquals("https://cf.geekdo-images.com/images/pic159509_t.jpg", game.getThumbnailUrl());
         assertEquals(5, game.getMaxPlayers());
         assertEquals(3, game.getMinPlayers());
         assertEquals("Karl-Heinz Schmiel", game.getDesigner());
