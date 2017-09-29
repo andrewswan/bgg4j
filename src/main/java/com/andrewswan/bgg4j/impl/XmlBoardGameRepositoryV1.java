@@ -20,7 +20,7 @@ import java.util.Optional;
  *
  * @since 1.0
  */
-public class XmlBoardGameRepository implements BoardGameRepository {
+public class XmlBoardGameRepositoryV1 implements BoardGameRepository {
 
     private static final String BGG_XML_API_BASE = "http://www.boardgamegeek.com/xmlapi/";
     private static final String URL_ENCODING = "UTF-8";

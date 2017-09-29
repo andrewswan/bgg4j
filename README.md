@@ -29,21 +29,22 @@ Ant/Scala users can use the above coordinates in their own way.
 This library is very lightweight, being about 10kb in size and with zero
 dependencies of its own.
 
-2. The entry point to this library is the `BoardGameRepository` interface, of
-which there is only one implementation, namely `XmlBoardGameRepository`. Your
-application will need to create an instance of this class in whichever way you
-prefer, e.g. using the "new" operator, or as a Spring bean, etc. For example:
+2. The entry point to this library is the `BoardGameRepository` interface. Your
+application will need to obtain an instance of this class using the provided
+factory, which allows you to specify the XML API version if desired. For example,
+to use the latest version of that API:
 
 ```
+    import com.andrewswan.bgg4j.BoardGame;
     import com.andrewswan.bgg4j.BoardGameRepository;
     import com.andrewswan.bgg4j.BoardGameSummary;
-    import com.andrewswan.bgg4j.impl.XmlBoardGameRepository;
+    import com.andrewswan.bgg4j.impl.BoardGameRepositoryFactory;
 
     public class MyApplication {
 
         // This class is thread-safe, so you only need one instance of it
         private final BoardGameRepository boardGameRepository =
-                new XmlBoardGameRepository();
+                BoardGameRepositoryFactory.getInstance();
 
         public void myMethod() {
             ...

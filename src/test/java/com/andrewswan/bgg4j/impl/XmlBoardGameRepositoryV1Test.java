@@ -3,6 +3,7 @@ package com.andrewswan.bgg4j.impl;
 import com.andrewswan.bgg4j.BoardGame;
 import com.andrewswan.bgg4j.BoardGameRepository;
 import com.andrewswan.bgg4j.BoardGameSummary;
+import com.andrewswan.bgg4j.impl.XmlBoardGameRepositoryV1;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -21,14 +22,14 @@ import static org.junit.Assert.assertTrue;
  * Will not be run by Maven but can be run via the IDE.
  */
 @Ignore("Requires BGG to be up and reachable")
-public class XmlBoardGameRepositoryTest {
+public class XmlBoardGameRepositoryV1Test {
 
     // Fixture
     private BoardGameRepository repository;
 
     @Before
     public void setUp() {
-        repository = new XmlBoardGameRepository();
+        repository = new XmlBoardGameRepositoryV1();
     }
 
     @Test
