@@ -29,7 +29,7 @@ Ant/Scala users can use the above coordinates in their own way.
 This library is very lightweight, being about 10kb in size and with zero
 dependencies of its own.
 
-1. The entry point to this library is the `BoardGameRepository` interface, of
+2. The entry point to this library is the `BoardGameRepository` interface, of
 which there is only one implementation, namely `XmlBoardGameRepository`. Your
 application will need to create an instance of this class in whichever way you
 prefer, e.g. using the "new" operator, or as a Spring bean, etc. For example:
@@ -61,7 +61,7 @@ prefer, e.g. using the "new" operator, or as a Spring bean, etc. For example:
     }
 ```
 
-1. JavaDoc and source code archives are available from Maven Central for those
+3. JavaDoc and source code archives are available from Maven Central for those
 who might need them.
 
 # Building
