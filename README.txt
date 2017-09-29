@@ -1,5 +1,4 @@
-Introduction
-~~~~~~~~~~~~
+# Introduction
 
 This is a Java library for programmatic access to boardgamegeek.com. It
 provides a programmer-friendly abstraction over the BGG XML API. If you want to
@@ -13,27 +12,29 @@ This project is neither affiliated with, sponsored by, nor approved by
 boardgamegeek.com. Hopefully they would contact me if they had any concerns
 about it.
 
-Usage
-~~~~~
+# Usage
+
 1. Add this library to your application's classpath. For Maven users, here's the
 dependency to add to your POM:
 
+```
     <dependency>
          <groupId>com.andrewswan</groupId>
          <artifactId>bgg4j</artifactId>
          <version>1.0</version>
     </dependency>
-
+```
 Ant/Scala users can use the above coordinates in their own way.
 
 This library is very lightweight, being about 10kb in size and with zero
 dependencies of its own.
 
-2. The entry point to this library is the BoardGameRepository interface, of
-which there is only one implementation, namely XmlBoardGameRepository. Your
+1. The entry point to this library is the `BoardGameRepository` interface, of
+which there is only one implementation, namely `XmlBoardGameRepository`. Your
 application will need to create an instance of this class in whichever way you
 prefer, e.g. using the "new" operator, or as a Spring bean, etc. For example:
 
+```
     import com.andrewswan.bgg4j.BoardGameRepository;
     import com.andrewswan.bgg4j.BoardGameSummary;
     import com.andrewswan.bgg4j.impl.XmlBoardGameRepository;
@@ -58,12 +59,12 @@ prefer, e.g. using the "new" operator, or as a Spring bean, etc. For example:
             ...
         }
     }
+```
 
-3. JavaDoc and source code archives are available from Maven Central for those
+1. JavaDoc and source code archives are available from Maven Central for those
 who might need them.
 
-Building
-~~~~~~~~
+# Building
 
 This section is only for people who want to build this library from source; most
 people will only need to use the prebuilt JAR file, in the manner described
@@ -74,10 +75,10 @@ contribution to it, it is a standard Maven project that produces a JAR file.
 Building it is simply a case of installing Maven in the usual way (if you
 have a Mac, I recommend Homebrew) and typing:
 
-  mvn install
+  `mvn install`
 
-Feedback
-~~~~~~~~
+# Feedback
+
 Please provide any bug reports, enhancement requests, or other feedback via the
-project home page, https://bitbucket.org/AndrewSwan_au/bgg4j. Thanks to
+[project home page](https://bitbucket.org/AndrewSwan_au/bgg4j). Thanks to
 Atlassian for the free hosting!
