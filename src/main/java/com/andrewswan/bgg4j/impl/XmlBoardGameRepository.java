@@ -41,7 +41,7 @@ public class XmlBoardGameRepository implements BoardGameRepository {
     }
 
     private String getSearchUrl(final String query, final boolean exact) {
-        final StringBuilder url = new StringBuilder("/search?search=");
+        final StringBuilder url = new StringBuilder("search?search=");
         try {
             url.append(URLEncoder.encode(query, URL_ENCODING));
         }
