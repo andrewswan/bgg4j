@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -14,15 +15,7 @@
 
     <name>bgg4j</name>
     <description>A Java library for easy use of the XML API exposed by www.boardgamegeek.com (BGG).</description>
-
-    <scm>
-        <url>https://bitbucket.org/AndrewSwan_au/bgg4j</url>
-        <connection>scm:git:ssh://git@bitbucket.org/AndrewSwan_au/bgg4j.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/AndrewSwan_au/bgg4j.git</developerConnection>
-    </scm>
-
     <url>https://bitbucket.org/AndrewSwan_au/bgg4j</url>
-
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -38,6 +31,19 @@
             <url>http://www.andrewswan.com</url>
         </developer>
     </developers>
+
+    <scm>
+        <url>https://bitbucket.org/AndrewSwan_au/bgg4j</url>
+        <connection>scm:git:ssh://git@bitbucket.org/AndrewSwan_au/bgg4j.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org/AndrewSwan_au/bgg4j.git</developerConnection>
+    </scm>
+
+    <properties>
+        <!-- The ID of my public PGP key -->
+        <gpg.keyname>2C841668</gpg.keyname>
+        <java.version>1.6</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -114,12 +120,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <!-- The ID of my public PGP key -->
-        <gpg.keyname>2C841668</gpg.keyname>
-        <java.version>1.6</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    
 </project>
