@@ -6,9 +6,12 @@ import javax.xml.bind.JAXBException;
 import java.io.InputStream;
 
 import static com.andrewswan.bgg4j.TestUtils.assertDieMacher;
+import static java.util.Collections.emptyList;
+import static java.util.Optional.empty;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 
 /**
  * Integration test of the unmarshalling of various sample BGG XML responses into {@link BoardGameList}s.
@@ -21,9 +24,9 @@ public class BoardGameListTest {
         final BoardGameList boardGameList = unmarshal("id_not_found.xml");
 
         // Check
-        assertEquals(0, boardGameList.getBoardGames().size());
-        assertEquals(0, boardGameList.getSummaries().size());
-        assertNull(boardGameList.getOnlyEntry());
+        assertThat(boardGameList.getBoardGames(), is(emptyList()));
+        assertThat(boardGameList.getSummaries(), is(emptyList()));
+        assertThat(boardGameList.getOnlyEntry(), is(empty()));
     }
 
     @Test
@@ -32,9 +35,9 @@ public class BoardGameListTest {
         final BoardGameList boardGameList = unmarshal("no_search_results.xml");
 
         // Check
-        assertEquals(0, boardGameList.getBoardGames().size());
-        assertEquals(0, boardGameList.getSummaries().size());
-        assertNull(boardGameList.getOnlyEntry());
+        assertThat(boardGameList.getBoardGames(), is(emptyList()));
+        assertThat(boardGameList.getSummaries(), is(emptyList()));
+        assertThat(boardGameList.getOnlyEntry(), is(empty()));
     }
 
     @Test
@@ -44,7 +47,7 @@ public class BoardGameListTest {
 
         // Check
         assertNotNull(boardGameList);
-        assertDieMacher(boardGameList.getOnlyEntry());
+        assertDieMacher(boardGameList.getOnlyEntry().orElseThrow(IllegalStateException::new));
     }
 
     @Test
@@ -54,7 +57,7 @@ public class BoardGameListTest {
 
         // Check
         assertNotNull(boardGameList);
-        final BoardGame boardGame = boardGameList.getOnlyEntry();
+        final BoardGame boardGame = boardGameList.getOnlyEntry().orElseThrow(IllegalStateException::new);
         assertEquals("Samurai", boardGame.getPrimaryName());
     }
 
@@ -65,7 +68,9 @@ public class BoardGameListTest {
 
         // Check
         assertNotNull(boardGameList);
-        final BoardGameSummary gameSummary = boardGameList.getOnlyEntry().getSummary();
+        final BoardGameSummary gameSummary = boardGameList.getOnlyEntry()
+                .map(BoardGame::getSummary)
+                .orElseThrow(IllegalStateException::new);
         assertEquals(27833, gameSummary.getBggId());
         assertEquals(2009, gameSummary.getYearPublished());
         assertEquals("Steam", gameSummary.getPrimaryName());
