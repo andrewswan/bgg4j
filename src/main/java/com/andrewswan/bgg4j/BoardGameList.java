@@ -1,6 +1,6 @@
 package com.andrewswan.bgg4j;
 
-import com.andrewswan.bgg4j.impl.JaxbUtils;
+import com.andrewswan.bgg4j.impl.JaxbUnmarshallerFactory;
 
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
@@ -8,6 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static com.andrewswan.bgg4j.impl.JaxbUnmarshallerFactory.getUnmarshaller;
 
 /**
  * A wrapper around a list of {@link BoardGame}s. This class only exists because JAXB requires a class to match the root
@@ -21,7 +23,7 @@ public class BoardGameList {
     /**
      * A JAXB XML unmarshaller for this class.
      */
-    public static final Unmarshaller UNMARSHALLER = JaxbUtils.getUnmarshaller(BoardGameList.class);
+    public static final Unmarshaller UNMARSHALLER = getUnmarshaller(BoardGameList.class);
 
     @XmlElement(name = "boardgame")
     private List<BoardGame> boardGames;
