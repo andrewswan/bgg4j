@@ -75,4 +75,15 @@ public class BoardGame {
     public BoardGameSummary getSummary() {
         return new BoardGameSummary(bggId, yearPublished, getPrimaryName());
     }
+
+    /**
+     * Indicates whether this instance represents a real game in BGG. This is
+     * necessary because BGG can return a "game" with an invalid ID to
+     * indicate "no results found" (instead of a 404).
+     *
+     * @return <code>false</code> if this is a dummy "not found" entry
+     */
+    public boolean isRealEntry() {
+        return getBggId() > 0;
+    }
 }
