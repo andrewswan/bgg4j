@@ -15,6 +15,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Integration test of reading from the live BGG XML API.
+ *
+ * Will not be run by Maven but can be run via the IDE.
+ */
+@Ignore("Requires BGG to be up and reachable")
 public class XmlBoardGameRepositoryTest {
 
     // Fixture
@@ -26,13 +32,11 @@ public class XmlBoardGameRepositoryTest {
     }
 
     @Test
-    @Ignore("Requires BGG to be up and reachable")
     public void nonExistentGameShouldBeNull() {
         assertNull(repository.get(Integer.MAX_VALUE));
     }
 
     @Test
-    @Ignore("Requires BGG to be up and reachable")
     public void existingGameShouldContainRequiredValues() {
         // Set up
         final int gameId = 1;
@@ -45,7 +49,6 @@ public class XmlBoardGameRepositoryTest {
     }
 
     @Test
-    @Ignore("Requires BGG to be up and reachable")
     public void gameWithMultipleNamesShouldHaveCorrectPrimaryName() {
         // Invoke
         final BoardGame samurai = repository.get(3).orElseThrow(IllegalStateException::new);
@@ -55,7 +58,6 @@ public class XmlBoardGameRepositoryTest {
     }
 
     @Test
-    @Ignore("Requires BGG to be up and reachable")
     public void searchingForGamesWithBogusNameShouldReturnEmptyList() {
         // Invoke
         final List<?> games = repository.search("Surely there's no game called this???");
