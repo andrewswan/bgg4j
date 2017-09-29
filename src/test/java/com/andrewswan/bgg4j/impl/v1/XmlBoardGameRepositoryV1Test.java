@@ -1,9 +1,9 @@
-package com.andrewswan.bgg4j.impl;
+package com.andrewswan.bgg4j.impl.v1;
 
 import com.andrewswan.bgg4j.BoardGame;
 import com.andrewswan.bgg4j.BoardGameRepository;
 import com.andrewswan.bgg4j.BoardGameSummary;
-import com.andrewswan.bgg4j.impl.XmlBoardGameRepositoryV1;
+import com.andrewswan.bgg4j.impl.v1.XmlBoardGameRepositoryV1;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

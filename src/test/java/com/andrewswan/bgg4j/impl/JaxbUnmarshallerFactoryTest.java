@@ -1,6 +1,6 @@
 package com.andrewswan.bgg4j.impl;
 
-import com.andrewswan.bgg4j.BoardGameList;
+import com.andrewswan.bgg4j.impl.v1.BoardGameListV1;
 import org.junit.Test;
 
 import javax.xml.bind.Unmarshaller;
@@ -18,7 +18,7 @@ public class JaxbUnmarshallerFactoryTest {
     @Test
     public void shouldBeAbleToGetUnmarshallerForXmlRootElement() {
         // Invoke
-        final Unmarshaller unmarshaller = JaxbUnmarshallerFactory.getUnmarshaller(BoardGameList.class);
+        final Unmarshaller unmarshaller = JaxbUnmarshallerFactory.getUnmarshaller(BoardGameListV1.class);
 
         // Check
         assertNotNull(unmarshaller);

@@ -1,7 +1,6 @@
-package com.andrewswan.bgg4j.impl;
+package com.andrewswan.bgg4j.impl.v1;
 
 import com.andrewswan.bgg4j.BoardGame;
-import com.andrewswan.bgg4j.BoardGameList;
 import com.andrewswan.bgg4j.BoardGameRepository;
 import com.andrewswan.bgg4j.BoardGameSummary;
 
@@ -54,10 +53,10 @@ public class XmlBoardGameRepositoryV1 implements BoardGameRepository {
         return url.toString();
     }
 
-    private BoardGameList getGames(final String urlPath) {
+    private BoardGameListV1 getGames(final String urlPath) {
         try {
             final URL bggUrl = new URL(BGG_XML_API_BASE + urlPath);
-            return (BoardGameList) BoardGameList.UNMARSHALLER.unmarshal(bggUrl);
+            return (BoardGameListV1) BoardGameListV1.UNMARSHALLER.unmarshal(bggUrl);
         }
         catch (final JAXBException | MalformedURLException e) {
             throw new IllegalStateException(e);

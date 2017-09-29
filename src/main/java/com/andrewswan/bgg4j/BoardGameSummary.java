@@ -1,58 +1,30 @@
 package com.andrewswan.bgg4j;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-
 /**
  * A board game's summary details on BGG.
  *
  * @since 1.0
  */
-public class BoardGameSummary {
-
-    @XmlAttribute(name = "objectid", required = true)
-    private int bggId;
-
-    @XmlElement(name = "yearpublished")
-    private int yearPublished;
-
-    @XmlElement(name = "primaryName")
-    private String primaryName;
+public interface BoardGameSummary {
 
     /**
-     * No-arg constructor required by JAXB.
-     */
-    @SuppressWarnings("unused")
-    private BoardGameSummary() {
-        this(0, 0, "overwritten by JAXB");
-    }
-
-    /**
-     * Constructor.
+     * Returns the BGG ID of this game.
      *
-     * @param bggId the ID of this game on BGG
-     * @param yearPublished the year in which this game was published
-     * @param primaryName the primary name of this game (required)
+     * @return see above
      */
-    public BoardGameSummary(
-            final int bggId, final int yearPublished, final String primaryName) {
-        if (primaryName == null || "".equals(primaryName.trim())) {
-            throw new IllegalArgumentException("Invalid name '" + primaryName + "'");
-        }
-        this.bggId = bggId;
-        this.primaryName = primaryName;
-        this.yearPublished = yearPublished;
-    }
+    int getBggId();
 
-    public int getBggId() {
-        return bggId;
-    }
+    /**
+     * Returns this game's primary name.
+     *
+     * @return see above
+     */
+    String getPrimaryName();
 
-    public String getPrimaryName() {
-        return primaryName;
-    }
-
-    public int getYearPublished() {
-        return yearPublished;
-    }
+    /**
+     * Returns the year in which this game was published.
+     *
+     * @return see above
+     */
+    int getYearPublished();
 }

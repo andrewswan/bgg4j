@@ -1,6 +1,7 @@
 package com.andrewswan.bgg4j.impl;
 
 import com.andrewswan.bgg4j.BoardGameRepository;
+import com.andrewswan.bgg4j.impl.v1.XmlBoardGameRepositoryV1;
 
 /**
  * The supported versions of the BGG XML API.

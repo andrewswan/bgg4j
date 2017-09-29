@@ -1,46 +1,54 @@
-package com.andrewswan.bgg4j;
+package com.andrewswan.bgg4j.impl.v1;
+
+import com.andrewswan.bgg4j.BoardGame;
+import com.andrewswan.bgg4j.BoardGameSummary;
 
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static com.andrewswan.bgg4j.impl.JaxbUnmarshallerFactory.getUnmarshaller;
 import static java.util.Collections.emptyList;
+import static java.util.stream.Collectors.toList;
 
 /**
- * A wrapper around a list of {@link BoardGame}s. This class only exists because JAXB requires a class to match the root
+ * A wrapper around a list of {@link BoardGameV1}s. This class only exists because JAXB requires a class to match the root
  * element of an XML file from which objects are to be unmarshalled.
  *
  * @since 1.0
  */
 @XmlRootElement(name = "boardgames")
-public class BoardGameList {
+public class BoardGameListV1 {
 
     /**
      * A JAXB XML unmarshaller for this class.
      */
-    public static final Unmarshaller UNMARSHALLER = getUnmarshaller(BoardGameList.class);
+    static final Unmarshaller UNMARSHALLER = getUnmarshaller(BoardGameListV1.class);
 
     @XmlElement(name = "boardgame")
-    private List<BoardGame> boardGames;
+    private List<BoardGameV1> boardGames;
 
     /**
      * Returns the games in this list.
      *
      * @return a non-null list
      */
-    public List<BoardGame> getBoardGames() {
-        return getFirstEntry().map(canary -> boardGames).orElse(emptyList());
+    List<BoardGameV1> getBoardGames() {
+        return getFirstEntry()
+                .map(canary -> boardGames)
+                .orElse(emptyList());
     }
 
     private Optional<BoardGame> getFirstEntry() {
         if (boardGames == null) {
             return Optional.empty();
         }
-        return boardGames.stream().filter(BoardGame::isRealEntry).findFirst();
+        return boardGames.stream()
+                .filter(BoardGameV1::isRealEntry)
+                .findFirst()
+                .map(BoardGame.class::cast);
     }
 
     /**
@@ -49,7 +57,7 @@ public class BoardGameList {
      * @return see above
      * @throws IllegalStateException if there are more than one
      */
-    public Optional<BoardGame> getOnlyEntry() {
+    Optional<BoardGame> getOnlyEntry() {
         final Optional<BoardGame> firstGame = getFirstEntry();
         if (firstGame.isPresent()) {
             if (boardGames.size() > 1) {
@@ -60,11 +68,9 @@ public class BoardGameList {
         return Optional.empty();
     }
 
-    public List<BoardGameSummary> getSummaries() {
-        final List<BoardGameSummary> summaries = new ArrayList<>();
-        for (final BoardGame boardGame : getBoardGames()) {
-            summaries.add(boardGame.getSummary());
-        }
-        return summaries;
+    List<BoardGameSummary> getSummaries() {
+        return getBoardGames().stream()
+                .map(BoardGame::getSummary)
+                .collect(toList());
     }
 }

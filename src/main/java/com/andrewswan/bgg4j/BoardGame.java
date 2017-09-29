@@ -1,80 +1,34 @@
 package com.andrewswan.bgg4j;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import java.util.List;
-
 /**
  * A board game on BGG.
  *
  * @since 1.0
  */
-public class BoardGame {
+public interface BoardGame {
 
-    @XmlAttribute(name = "objectid", required = true)
-    private int bggId;
+    int getBggId();
 
-    @XmlElement(name = "maxplayers")
-    private int maxPlayers;
+    String getDesigner();
 
-    @XmlElement(name = "minplayers")
-    private int minPlayers;
+    String getImageUrl();
 
-    @XmlElement(name = "yearpublished")
-    private int yearPublished;
+    int getMaxPlayers();
 
-    @XmlElement(name = "name")
-    private List<String> names;
+    int getMinPlayers();
 
-    @XmlElement(name = "boardgamedesigner")
-    private String designer;
+    String getPrimaryName();
 
-    @XmlElement(name = "image")
-    private String imageUrl;
+    int getYearPublished();
 
-    @XmlElement(name = "thumbnail")
-    private String thumbnailUrl;
-
-    public int getBggId() {
-        return bggId;
-    }
-
-    public String getDesigner() {
-        return designer;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public int getMaxPlayers() {
-        return maxPlayers;
-    }
-
-    public int getMinPlayers() {
-        return minPlayers;
-    }
-
-    public String getPrimaryName() {
-        return names == null || names.isEmpty() ? null : names.get(0);
-    }
-
-    public int getYearPublished() {
-        return yearPublished;
-    }
-
-    public String getThumbnailUrl() {
-        return thumbnailUrl;
-    }
+    String getThumbnailUrl();
 
     /**
      * Returns summary information about this game.
      *
      * @return a non-null summary
      */
-    public BoardGameSummary getSummary() {
-        return new BoardGameSummary(bggId, yearPublished, getPrimaryName());
-    }
+    BoardGameSummary getSummary();
 
     /**
      * Indicates whether this instance represents a real game in BGG. This is
@@ -83,7 +37,7 @@ public class BoardGame {
      *
      * @return <code>false</code> if this is a dummy "not found" entry
      */
-    public boolean isRealEntry() {
+    default boolean isRealEntry() {
         return getBggId() > 0;
     }
 }

@@ -1,8 +1,9 @@
-package com.andrewswan.bgg4j;
+package com.andrewswan.bgg4j.impl.v1;
 
+import com.andrewswan.bgg4j.BoardGame;
+import com.andrewswan.bgg4j.BoardGameSummary;
 import org.junit.Test;
 
-import javax.xml.bind.JAXBException;
 import java.io.InputStream;
 
 import static com.andrewswan.bgg4j.TestUtils.assertDieMacher;
@@ -14,14 +15,14 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 /**
- * Integration test of the unmarshalling of various sample BGG XML responses into {@link BoardGameList}s.
+ * Integration test of the unmarshalling of various sample BGG XML responses into {@link BoardGameListV1}s.
  */
-public class BoardGameListTest {
+public class BoardGameListV1Test {
 
     @Test
-    public void listShouldBeEmptyWhenGettingInvalidBggId() throws JAXBException {
+    public void listShouldBeEmptyWhenGettingInvalidBggId() throws Exception {
         // Invoke
-        final BoardGameList boardGameList = unmarshal("id_not_found.xml");
+        final BoardGameListV1 boardGameList = unmarshal("id_not_found.xml");
 
         // Check
         assertThat(boardGameList.getBoardGames(), is(emptyList()));
@@ -30,9 +31,9 @@ public class BoardGameListTest {
     }
 
     @Test
-    public void listShouldBeEmptyWhenUnmarshallingEmptySearchResults() throws JAXBException {
+    public void listShouldBeEmptyWhenUnmarshallingEmptySearchResults() throws Exception {
         // Invoke
-        final BoardGameList boardGameList = unmarshal("no_search_results.xml");
+        final BoardGameListV1 boardGameList = unmarshal("no_search_results.xml");
 
         // Check
         assertThat(boardGameList.getBoardGames(), is(emptyList()));
@@ -41,9 +42,9 @@ public class BoardGameListTest {
     }
 
     @Test
-    public void unmarshallerShouldUnmarshalGameDetailsFromBggFormatXmlFile() throws JAXBException {
+    public void unmarshallerShouldUnmarshalGameDetailsFromBggFormatXmlFile() throws Exception {
         // Invoke
-        final BoardGameList boardGameList = unmarshal("die_macher.xml");
+        final BoardGameListV1 boardGameList = unmarshal("die_macher.xml");
 
         // Check
         assertNotNull(boardGameList);
@@ -51,20 +52,20 @@ public class BoardGameListTest {
     }
 
     @Test
-    public void unmarshallerShouldUnmarshalPrimaryNameWhenOtherNamesExist() throws JAXBException {
+    public void unmarshallerShouldUnmarshalPrimaryNameWhenOtherNamesExist() throws Exception {
         // Invoke
-        final BoardGameList boardGameList = unmarshal("samurai.xml");
+        final BoardGameListV1 boardGameList = unmarshal("samurai.xml");
 
         // Check
         assertNotNull(boardGameList);
-        final BoardGame boardGame = boardGameList.getOnlyEntry().orElseThrow(IllegalStateException::new);
+        final com.andrewswan.bgg4j.BoardGame boardGame = boardGameList.getOnlyEntry().orElseThrow(IllegalStateException::new);
         assertEquals("Samurai", boardGame.getPrimaryName());
     }
 
     @Test
-    public void unmarshallerShouldUnmarshalGameSummaryFromExactSearchResults() throws JAXBException {
+    public void unmarshallerShouldUnmarshalGameSummaryFromExactSearchResults() throws Exception {
         // Invoke
-        final BoardGameList boardGameList = unmarshal("steam_exact.xml");
+        final BoardGameListV1 boardGameList = unmarshal("steam_exact.xml");
 
         // Check
         assertNotNull(boardGameList);
@@ -76,8 +77,9 @@ public class BoardGameListTest {
         assertEquals("Steam", gameSummary.getPrimaryName());
     }
 
-    private BoardGameList unmarshal(final String xmlFile) throws JAXBException {
-        final InputStream xmlStream = getClass().getResourceAsStream(xmlFile);
-        return (BoardGameList) BoardGameList.UNMARSHALLER.unmarshal(xmlStream);
+    private BoardGameListV1 unmarshal(final String xmlFile) throws Exception {
+        try (final InputStream xmlStream = getClass().getResourceAsStream(xmlFile)) {
+            return (BoardGameListV1) BoardGameListV1.UNMARSHALLER.unmarshal(xmlStream);
+        }
     }
 }
